@@ -1,0 +1,77 @@
+.directory-list
+  // max-height: 63vh
+  padding-top: 1rem
+  overflow-x: hidden
+  overflow-y: auto
+  > .dragArea
+    padding-left: .5rem
+  .edit
+    .item-wrapper
+      border: 1px solid #ddd
+      border-radius: 4px
+    .directory-item .directory-name
+      width: 90%
+  > ul
+    margin-bottom: 0
+
+.display-none
+ .directory-item
+   display: none
+
+.directory-item
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  i
+    font-size: 1.2rem
+    padding: 0
+    color: #807d7b
+
+  .directory-name
+    padding-left: .5rem
+    letter-spacing: .25px
+    .form-control
+      border: none
+      height: 24px
+  .fa-chevron-right, .fa-chevron-down
+    font-size: .9rem
+
+.right-element
+  margin-left: auto
+
+
+.directory-item
+  .fa-chevron-right, .fa-chevron-down
+    font-size: .9rem
+
+.dragArea
+  padding: .25rem 0 0 1.5rem
+  width: 100%
+
+
+.functional-bar + .dragArea
+  padding-left: 0
+
+i.fa + .directory-name
+  padding-left: .5rem
+
+.item-wrapper
+  flex-grow: 1
+  display: flex
+  padding: .5rem .7rem .5rem .3rem
+  border-radius: 4px
+  justify-content: center
+  align-items: center
+  i
+    width: 22px
+  &.active,&:hover
+    background-color: #e1e0df
+  &:hover
+    cursor: pointer
+
+.directory-list > ul > li > .item-wrapper > .directory-name
+  font-size: .9rem
+
+.root-dir .directory-name
+  font-weight: 600 !important
+

@@ -1,0 +1,12 @@
+{
+  "id": "Id",
+  "name": "Name",
+  "member": "Member",
+  "admin":"Admin",
+  "createGroup":"Add",
+  "group":"Group",
+  "searchMember":"Search member",
+  "selectGroup":"Select group",
+  "updateGroup":"Update group",
+  "updateGroupConfirmMsg":"Do you want to update group for document ?"
+}

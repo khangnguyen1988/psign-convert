@@ -1,0 +1,70 @@
+.toasted-container
+  .toasted
+    align-self: flex-end
+  .toasted.bubble
+    border-radius: 5px
+    font-size: 13px
+    font-weight: bold
+  .toasted.bubble.success
+    color: #0b6a0b
+    background: #fff
+    .action
+      color: #0b6a0b
+  .toasted.bubble.error
+    color: #d13438
+    background: #fff
+    .action
+      color: #d13438
+  .toasted.bubble.success::before
+    content: "\f058"
+    font-family: "Font Awesome 5 Pro"
+    font-weight: 400
+    padding: 0 0.5rem 0 0
+    font-size: 1rem
+  .toasted.bubble.error::before
+    content: "\f05e"
+    font-family: "Font Awesome 5 Pro"
+    font-weight: 400
+    padding: 0 0.5rem 0 0
+    font-size: 1rem
+  .toasted.bubble .action
+    color: #323130
+    font-weight: 900
+    font-size: 12px
+    padding-left: 10px
+
+  .toasted.bubble.spinner
+    background: $blue-color
+  .toasted.spinner::before
+    content: ""
+    border: 4px solid #fff
+    border-top: 4px solid $primary-color
+    border-radius: 50%
+    width: 2.5rem
+    height: 2.5rem
+    animation: spin 1.5s linear infinite
+    margin: 0.5rem 1rem 0.5rem 0
+
+  .toasted.bubble.warning
+    background-color: #f39c12
+  .toasted.bubble.warning::before
+    content: "\f071"
+    font-family: "Font Awesome 5 Pro"
+    font-weight: 400
+    padding: 0 0.5rem 0 0
+
+.fa-loading
+  border: 3px solid #fff
+  border-top: 3px solid orange
+  border-radius: 50%
+  width: 2rem
+  height: 2rem
+  animation: spin 1.5s linear infinite
+  margin: 0 0.2rem 0 0
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)

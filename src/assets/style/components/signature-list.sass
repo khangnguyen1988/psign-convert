@@ -1,0 +1,73 @@
+.vendors, .signatures
+  list-style: none
+  font-size: 1.25rem
+  margin-bottom: 0
+  padding: 0
+
+.signatures
+  font-size: 1rem
+  padding: 1rem 0
+
+
+.vendors p, .signatures p
+  font-size: .85rem
+  margin-bottom: 3px
+
+.vendor-item
+  margin-bottom: 1rem
+  @include respondTo(smartphone)
+    margin-bottom: 2.5rem
+  .title
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 3px
+    h5
+      margin-bottom: 0
+
+
+.signature-item
+  display: flex
+  align-items: center
+  &.in-active
+    opacity: .4
+    &.cancelled
+      opacity: 1
+      h5
+        border: 1px solid #F97567
+        color: #F97567
+      .icon
+        background: #fff
+      i.in-valid
+        display: inline-block
+      i.valid
+        display: none
+  h5
+    display: flex
+    align-items: center
+    font-size: .875rem
+    flex-grow: 1
+    border: 1px solid #ccc
+    border-radius: 4px
+    padding: 0.25rem 0.75rem
+    margin: 0
+  .icon
+    margin-left: auto
+    margin-right: 4px
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    background: #ccc
+    padding: 0.5rem
+    border-radius: 50%
+    font-size: 1.25rem
+    .in-valid
+      display: none
+    .valid
+      display: inline-block

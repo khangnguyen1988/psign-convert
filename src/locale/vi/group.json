@@ -1,0 +1,12 @@
+{
+  "id": "Id",
+  "name": "Tên nhóm",
+  "member": "Thành viên",
+  "admin":"Quản trị viên",
+  "createGroup":"Thêm nhóm",
+  "group":"Nhóm",
+  "searchMember":"Tìm kiếm người dùng",
+  "selectGroup":"Chọn nhóm",
+  "updateGroup":"Cập nhật nhóm",
+  "updateGroupConfirmMsg":"Bạn có muốn cập nhật nhóm cho tài liêu ?"
+}

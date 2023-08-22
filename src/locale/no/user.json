@@ -1,0 +1,21 @@
+{
+  "date": "Issued Date",
+  "invoiceValue": "Value Invoice",
+  "invoiceNumber": "Invoice Number",
+  "content": "Content",
+  "vat": "VAT",
+  "vendorName": "Vendor Name",
+  "taxCode": "Tax Code",
+  "seller_name": "Seller Name",
+  "seller_taxcode": "Sell Tax Code",
+  "seller_address": "Seller Address",
+  "buyer_name": "Buyer Name",
+  "buyer_taxcode": "Buyer TaxCode",
+  "buyer_address": "Buyer Address",
+  "invoice_number": "Invoice Number",
+  "issued_date": "Issued Date",
+  "total_amount_without_tax": "PreTax Amount",
+  "total_amount_with_tax": "AfterTax Amount",
+  "kind_of": "Outgoing invoice",
+  "parent_id": "Directory"
+}

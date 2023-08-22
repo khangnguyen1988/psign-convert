@@ -1,0 +1,57 @@
+.form-group
+  label
+    font-weight: 400
+    color: $main-text-color
+    font-size: .85rem
+    margin-bottom: .25rem
+  &.input-password
+    position: relative
+    .fa-eye, .fa-eye-slash
+      position: absolute
+      bottom: 10px
+      right: 12px
+      &:hover
+        cursor: pointer
+  .form-control
+    font-size: .85rem
+    padding: .5rem .75rem
+    border: 1px solid #E0E0E0
+    &::placeholder
+      color: #757575
+    &[type="file"]
+      padding: 3px
+      padding-left: 20px
+      position: relative
+      &::-webkit-file-upload-button
+        visibility: hidden
+      &::before
+        display: inline-block
+        content: 'Choose Files'
+        border: 1px solid #ccc
+        left: -1px
+        position: absolute
+        top: -1px
+        padding: 6px
+        border-radius: 4px
+
+.input-group
+  .form-control.is-invalid
+  ~.invalid-feedback
+    display: block
+
+.invoice-form
+  form.form-group
+    max-height: 75vh
+    overflow-y: auto
+    > div
+      max-width: 98%
+    .form-group
+      margin-bottom: .25rem
+
+.invoice-form-modal
+  .pdf-viewer-container
+    max-height: 73vh
+
+.field-desc
+  font-size: .75rem
+  font-style: italic

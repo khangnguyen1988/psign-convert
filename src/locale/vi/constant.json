@@ -1,0 +1,31 @@
+{
+  "INVOICE_RULES" : {
+    "RULE_CCID": "Số hợp đồng/Id",
+    "RULE_SELLER": "Tên người bán/MST chứa",
+    "RULE_BUYER": "Tên người mua/MST chứa",
+    "RULE_CONTENT": "Nội dung chứa",
+    "RULE_UNIT": "Đơn vị",
+    "RULE_VAT": "Vat(%) =",
+    "RULE_VAT_LEAST": "Vat(%) >",
+    "RULE_VAT_MOST": "Vat(%) <",
+    "RULE_TOTAL_BEFORE_TAX": "Tiền trước thuế =",
+    "RULE_TOTAL_BEFORE_TAX_LEAST": "Tiền trước thuế >",
+    "RULE_TOTAL_BEFORE_TAX_MOST": "Tiền trước thuế <",
+    "RULE_AMOUNT_OF_DEBT_DAYS": "Ngày công nợ >=",
+    "RULE_KIND_OF": "Loại hóa đơn",
+    "RULE_PAID_DATE": "Thanh toán"
+  },
+  "RULE_UNIT" : {
+    "DAY": "Ngày",
+    "MONTH": "Tháng",
+    "TIMES": "Lần"
+  },
+  "RULE_KIND_OF" : {
+    "NO": "Đầu vào",
+    "YES": "Đầu ra"
+  },
+  "RULE_PAID_DATE" : {
+    "YES": "Đã thanh toán",
+    "NO": "Chưa thanh toán"
+  }
+}

@@ -1,0 +1,15 @@
+#client-search-container
+  .popover
+    min-width: 20rem
+    @media screen and (max-width: 576px)
+      min-width: 10rem
+  .search-content
+    width: 15rem
+    @media screen and (max-width: 576px)
+      width: 10rem
+    @include transition('width 0.25s')
+  .search-content:focus
+    width: 20rem
+    @media screen and (max-width: 576px)
+      width: 12rem
+

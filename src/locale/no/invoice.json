@@ -1,0 +1,9 @@
+{
+  "date": "Date",
+  "invoiceValue": "Value Invoice",
+  "invoiceNumber": "Invoice Number",
+  "content": "Content",
+  "vat": "VAT",
+  "vendorName": "Vendor Name",
+  "taxCode": "Tax Code"
+}

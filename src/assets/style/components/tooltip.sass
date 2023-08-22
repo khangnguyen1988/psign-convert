@@ -1,0 +1,20 @@
+/*
+  Styling for popover inside table header
+  We can't use position absolute for popover content because it is unable to display  */
+.thead-popover-content
+  visibility: hidden
+  background-color: whitesmoke
+  text-align: justify
+  padding: 0.5rem
+  border: 1px solid #ccc
+  border-radius: 4px
+  width: 41rem
+  font-size: 0.85rem
+  font-weight: normal
+  position: fixed
+  z-index: 2
+
+.thead-popover:hover
+  cursor: pointer
+  .thead-popover-content
+    visibility: visible

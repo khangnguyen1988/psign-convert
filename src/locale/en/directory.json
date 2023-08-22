@@ -1,0 +1,20 @@
+{
+  "desc": "Manage invoices by grouping",
+  "parentDesc": "Select parent directory if you want the new directory will be child of existing directory in the system",
+  "updateDirectory": "Update Directory",
+  "editDirectory": "Edit Directory",
+  "filter": "Search directory name or tag name",
+  "addDirectory": "Add New Directory",
+  "createDirectory": "Create Directory",
+  "parentDir": "Parent Directory",
+  "name": "Name",
+  "approvedInvoices": "Approved Invoices",
+  "generalInvoices": "General Invoices",
+  "inProgress": "In progress",
+  "imported": "Imported",
+  "moveToDir": "Move To Directory",
+  "dir": "Directory",
+  "createSuccess": "New Directory has been created",
+  "createError": "Create directory failed",
+  "createDirDesc": "Create new folder due to store and manage your group of invoices"
+}

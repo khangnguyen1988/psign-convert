@@ -1,0 +1,25 @@
+{
+    "defaultSignature":"Chữ ký mặc định",
+    "changeSignature":"Thay đổi chữ ký",
+    "selectSignature":"Chọn chữ ký ảnh",
+    "refuse":"Từ chối",
+    "accept":"Đồng ý",
+    "active":"Kích hoạt",
+    "deactivate":"Tắt",
+    "provider":"Tên đơn vị",
+    "caType":"Loại chữ ký số",
+    "ownerName":"Người sở hữu",
+    "effectiveDate":"Ngày có hiệu lực",
+    "expiredAt":"Hết hiệu lực",
+    "status":"Trạng thái",
+    "ca":"Chứng thư số",
+    "activeCA":"Kích hoạt chứng thư số",
+    "deactivateCA":"Vô hiệu chứng thư số",
+    "chooseStyle":"Chọn một phong cách cho chữ ký của bạn",
+    "createSignatureByName":"Tạo chữ ký bằng cách nhập tên bạn",
+    "inputYourName":"Nhập chữ ký của bạn",
+    "yourSignature":"Chữ ký của bạn",
+    "userCursorToDrawSignature":"Sử dụng con trỏ chuột để vẽ chữ ký của bạn",
+    "selectType":"Chọn loại ký"
+
+}

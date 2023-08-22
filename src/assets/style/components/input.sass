@@ -1,0 +1,23 @@
+.form-group
+  .input-currency-wrapper
+    position: relative
+    &:hover
+      input
+        color: #212529
+      .currency-text-display
+        display: none
+    input
+      color: transparent
+      &:focus
+        color: #212529 !important
+    input:focus + .currency-text-display
+      display: none
+    .currency-text-display
+      position: absolute
+      top: 0
+      left: 0
+      padding: 8px 0 0 14px
+
+.custom-select
+  font-size: .85rem
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath d='M443.5 162.6l-7.1-7.1c-4.7-4.7-12.3-4.7-17 0L224 351 28.5 155.5c-4.7-4.7-12.3-4.7-17 0l-7.1 7.1c-4.7 4.7-4.7 12.3 0 17l211 211.1c4.7 4.7 12.3 4.7 17 0l211-211.1c4.8-4.7 4.8-12.3.1-17z'/%3E%3C/svg%3E") no-repeat right 0.75rem center/14px 14px

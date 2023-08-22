@@ -1,0 +1,31 @@
+{
+  "INVOICE_RULES" : {
+    "RULE_CCID": "Contract Number/Id",
+    "RULE_SELLER": "Seller Name/TaxCode includes",
+    "RULE_BUYER": "Buyer Name/TaxCode includes",
+    "RULE_CONTENT": "Content includes",
+    "RULE_UNIT": "Unit",
+    "RULE_VAT": "Vat(%) =",
+    "RULE_VAT_LEAST": "Vat(%) >",
+    "RULE_VAT_MOST": "Vat(%) <",
+    "RULE_TOTAL_BEFORE_TAX": "PreTax Amount =",
+    "RULE_TOTAL_BEFORE_TAX_LEAST": "PreTax Amount >",
+    "RULE_TOTAL_BEFORE_TAX_MOST": "PreTax Amount <",
+    "RULE_AMOUNT_OF_DEBT_DAYS": "Debt days >=",
+    "RULE_KIND_OF": "Invoice type",
+    "RULE_PAID_DATE": "Paid Status"
+  },
+  "RULE_UNIT" : {
+    "DAY": "Day",
+    "MONTH": "Month",
+    "TIMES": "Times"
+  },
+  "RULE_KIND_OF" : {
+    "YES": "Outgoing",
+    "NO": "Incoming"
+  },
+  "RULE_PAID_DATE" : {
+    "YES": "Paid",
+    "NO": "Not Paid"
+  }
+}

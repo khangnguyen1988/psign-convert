@@ -1,0 +1,24 @@
+{
+  "INVOICE_RULES" : {
+    "RULE_CUSTOMER": "Customer name includes",
+    "RULE_PRODUCT": "Product name includes",
+    "RULE_UNIT": "Unit",
+    "RULE_UNIT_PRICE": "Unit Price =",
+    "RULE_UNIT_LEAST": "Unit Price > ",
+    "RULE_UNIT_MOST": "Unit Price <",
+    "RULE_VAT": "Vat =",
+    "RULE_VAT_LEAST": "Vat >",
+    "RULE_VAT_MOST": "Vat <",
+    "RULE_GROSS_REVENUE": "Gross Revenue =",
+    "RULE_GROSS_REVENUE_LEAST": "Gross Revenue >",
+    "RULE_GROSS_REVENUE_MOST": "Gross Revenue <",
+    "RULE_NET_REVENUE": "Net Revenue =",
+    "RULE_NET_REVENUE_LEAST": "Net Revenue >",
+    "RULE_NET_REVENUE_MOST": "Net Revenue <"
+  },
+  "RULE_UNIT" : {
+    "DAY": "Day",
+    "MONTH": "Month",
+    "TIMES": "Times"
+  }
+}

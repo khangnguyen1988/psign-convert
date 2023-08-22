@@ -1,0 +1,55 @@
+$text-color:  red green blue white orange pink yellow
+
+@each $item in $text-color
+  .text-#{$item}
+    color: #{$item}
+.w-15
+  width: 15% !important
+
+
+.container-max-height-scroll-80
+  max-height: 80vh
+  overflow: auto
+
+.yellow
+  color: #d89c21 !important
+.red
+  color: #d13438 !important
+.green
+  color: #0b6a0b !important
+.bg-green
+  background: #0b6a0b !important
+
+
+.fade-enter, .fade-leave-to
+  visibility: hidden
+  height: 0
+  width: 0
+  margin: 0
+  padding: 0
+  opacity: 0
+
+
+.fade-enter-active, .fade-leave-active
+  transition: all .3s
+
+.opacity-enter-active,
+.opacity-leave-active
+  transition: opacity .3s
+
+
+.opacity-enter,
+.opacity-leave-active
+  opacity: 0
+
+.flex-col
+  display: flex
+  flex-direction: column
+  flex: 1 1 auto
+
+.flex-row-center
+  display: flex
+  flex-direction: row
+  flex: 1 1 auto
+  justify-content: center
+  align-items: center

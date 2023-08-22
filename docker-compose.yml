@@ -1,0 +1,11 @@
+version: "2.3"
+services:
+  nginx:
+    container_name: pvs-web
+    image: nginx:latest
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./docker/nginx:/etc/nginx/conf.d
+      - ./dist:/var/www/html
+    restart: always

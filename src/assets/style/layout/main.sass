@@ -1,0 +1,109 @@
+body
+  font-size: .85rem
+
+a
+  color: #0072C6
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  background-color: #e7e8e8f2
+  height: 100vh
+  width: 100%
+  background-size: 85px
+  z-index: 2
+  .row
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    i
+      font-size: 11rem
+
+.right-main-content
+  flex: 1
+  position: relative
+  @include respondTo(smartphone)
+    max-width: 0
+  .expand-collapse-sidebar
+    display: none
+    position: absolute
+    left: -2rem
+    z-index: 2
+    circle
+      &:hover
+        cursor: pointer
+        fill: $gray-50
+
+.sidebar-collapsed
+  .right-main-content
+    @include respondTo(smartphone)
+      max-width: 100%
+  .expand-collapse-sidebar
+    display: inline-block
+    transform: rotate(180deg)
+    left: 0
+
+
+.popover .arrow::before, .popover .arrow::after
+  visibility: hidden
+
+.bs-popover-bottom, .bs-popover-auto[x-placement^="bottom"]
+  margin-top: 0.35rem
+
+.loading-container.center
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
+  width: 100%
+  font-size: 2rem
+
+
+.notification-container-popover
+  left: -2rem
+  max-width: 400px
+  .popover-body
+    width: 400px
+    max-height: 50vh
+    overflow-y: auto
+
+.notification-item
+  padding-bottom: 6px
+  border-bottom: 1px solid #e0dede
+  margin-bottom: 12px
+  position: relative
+  &:hover
+    cursor: pointer
+  .d-flex
+    align-items: center
+  .content
+    flex-grow: 1
+  .actions
+    width: 13px
+  .title
+    font-size: .95rem
+    font-weight: 500
+    padding-left: 0
+    margin-bottom: 6px
+  .desc
+    font-weight: lighter
+    font-size: .75rem
+    font-style: italic
+    margin-bottom: 3px
+  &.unread
+    .title
+      font-weight: 900
+    .desc
+      font-weight: bold
+  i
+    font-size: .8rem
+  .fa.fa-times
+    position: absolute
+    top: -1px
+    right: 3px
+
+.widget-visible iframe
+  @include respondTo(smartphone)
+    display: none !important

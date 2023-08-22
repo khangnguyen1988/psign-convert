@@ -1,0 +1,65 @@
+.app-header
+  height: 4.125rem
+  background: $primary-color
+  color: #fff
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  .title
+    font-size: 1rem
+    font-weight: 600
+    padding: 0 1rem
+    @include respondTo(smartphone)
+      font-size: 11px
+  .app-search-box
+    i
+      color: #555
+  .app-functions
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 35px
+    width: 35px
+    background: #fff
+    margin: 0 1rem
+    border-radius: 50%
+
+    &:hover
+      text-decoration: none
+    @include respondTo(smartphone)
+      padding: .5rem
+    &.mobile
+      display: none
+      @include respondTo(smartphone)
+        display: inline-block
+    i
+      color: $primary-color
+      font-size: 1.35rem
+      @include respondTo(smartphone)
+        font-size: 1rem
+    &.no-background
+      background: transparent
+      i
+        color: #fff
+        font-size: 1.75rem
+    .badge
+      top: -13px
+      border-radius: 20px
+      text-align: center
+      font-size: .7rem
+      padding: 2px 4px 1px 4px
+  form.form-inline
+    margin-right: auto
+  .b-dropdown button
+    padding: 12px 0
+  .dropdown-menu i.fa
+      padding-right: 6px
+
+  .dropdown-item
+    padding: 0.25rem .75rem
+    i
+      width: 24px
+  @include respondTo(smartphone)
+    .app-name
+      display: none
+

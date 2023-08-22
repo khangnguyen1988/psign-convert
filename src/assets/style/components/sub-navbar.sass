@@ -1,0 +1,58 @@
+.app-sub-navbar
+  position: relative
+  display: none
+  width: 100%
+  .nav-link
+    padding: 0.4rem 1rem 0.4rem 2.6rem
+    .badge-pill
+      float: right
+  .nav-item:before
+    background: #425668
+    bottom: auto
+    content: ""
+    height: 8px
+    left: 27px
+    margin-top: 14px
+    position: absolute
+    right: auto
+    width: 8px
+    z-index: 1
+    border-radius: 50%
+  .nav-item:after
+    border-left: 1px solid #425668
+    bottom: 0
+    content: ""
+    left: 30px
+    top: 0
+    position: absolute
+  .nav-item.selected, .nav-item:hover
+    border: none
+  .nav-item.selected
+    background: rgba(255, 255, 255, 0.2)
+  .router-link-active
+    background: rgba(255, 255, 255, 0.2)
+
+.nav-item.show-sub-nav-item
+  .app-sub-navbar
+    display: flex
+    flex-direction: column
+
+.minimize-side-bar
+  .app-sub-navbar
+    .nav-link
+      padding: 0.5rem 0
+      .badge-pill
+        display: inline
+        float: none
+    .nav-item:before, .nav-item:after
+      display: none
+
+.app-sub-navbar
+  @media screen and (max-width: 576px)
+    .nav-link
+      padding: 0.5rem 0
+      .badge-pill
+        display: inline
+        float: none
+    .nav-item:before, .nav-item:after
+      display: none

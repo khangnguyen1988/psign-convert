@@ -1,0 +1,113 @@
+
+.home-container
+  display: flex
+  flex: 1 1 auto
+  .tabs-component-tabs
+    font-size: .75rem
+    i
+      padding-right: 4px
+
+.navigation-pane
+  font-size: 14px
+  max-width: 450px
+  min-width: 350px
+  width: 380px
+  color: rgb(50, 49, 48)
+  background-color: rgb(243, 242, 241)
+  @include respondTo(smartphone)
+    min-width: 100%
+  section.tabs-component-panel
+    height: 80vh
+    overflow-y: auto
+    @include respondTo(smartphone)
+      height: 78vh
+  .tabs-component-tabs
+    margin-bottom: 0
+    color: rgb(50, 49, 48)
+    @media (max-width: 768px)
+      -ms-flex-direction: row
+      flex-direction: row
+    .tabs-component-tab
+      margin: 0 4px
+      &:hover
+        cursor: pointer
+      flex-grow: 1
+      text-align: center
+      i
+        color: #6c6c6a
+        font-size: 1rem
+      &.is-active
+        i
+          color: #fff
+
+.navigation-pane-filter
+  padding: 8px 8px 0px 10px
+  display: flex
+  align-items: center
+  .autocomplete-container
+    flex-grow: 1
+  strong
+    width: 38px
+    text-align: right
+
+
+.right-pane-content
+  display: flex
+  height: calc(100vh - 100px)
+  overflow: hidden
+  @include respondTo(smartphone)
+    width: 100%
+
+.navigation-pane-adjustment, .invoice-list-col-resize
+  width: 4px
+  background-color: rgb(243, 242, 241)
+  &:hover
+    cursor: col-resize
+
+.main-content
+  flex-grow: 1
+  display: flex
+
+.right-pane
+  flex-grow: 1
+  @include respondTo(smartphone)
+    width: 100%
+
+
+.functional-bar
+  display: flex
+  align-items: center
+  height: 50px
+  background-color: #f3f2f1
+  border-bottom: 1px solid #edebe9
+  .function-item
+    height: 26px
+    padding: 0 .5rem
+    i.fa
+      font-size: 16px
+      padding-right: 6px
+    a
+      font-size: 14px
+      padding: .5rem
+      &:hover
+        background: #dedede
+        text-decoration: none
+      @include respondTo(smartphone)
+        span
+          display: none
+  .check-all
+    margin-left: .25rem
+    padding: .15rem .75rem
+    .custom-control-label
+      font-size: 14px
+      color: #0072C6
+      padding: 0 0 0 4px
+      &:hover
+        text-decoration: underline
+      &:before, &:after
+        width: .95rem
+        height: .95rem
+
+.app-functions.app-navbar
+  padding: .75rem 1rem
+
