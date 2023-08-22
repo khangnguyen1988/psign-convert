@@ -31,12 +31,12 @@ class DocumentProxy extends BaseProxy {
     })
 
     const toast = {
-      error: 'Upload error'
+      error: 'Đã xảy ra lỗi trong quá trình upload tài liệu'
     }
-    const result = this.submit('post', `${this.endpoint}/create`, formData, {
+    return this.submit('post', `${this.endpoint}/create`, formData, {
       toast,
       showLoading: true,
-      onUploadProgress (progressEvent) {
+      onUploadProgress(progressEvent) {
         uploadStatus.percentCompleted = Math.round(
           (progressEvent.loaded * 100) / progressEvent.total
         )
@@ -45,7 +45,6 @@ class DocumentProxy extends BaseProxy {
         'Content-Type': 'multipart/form-data'
       }
     })
-    return result
   }
 
   markFile (payload) {
@@ -79,10 +78,10 @@ class DocumentProxy extends BaseProxy {
     const toast = {
       error: 'Upload error'
     }
-    const result = this.submit('post', `${this.endpoint}/upload_file_in_draft`, formData, {
+    return this.submit('post', `${this.endpoint}/upload_file_in_draft`, formData, {
       toast,
       showLoading: true,
-      onUploadProgress (progressEvent) {
+      onUploadProgress(progressEvent) {
         uploadStatus.percentCompleted = Math.round(
           (progressEvent.loaded * 100) / progressEvent.total
         )
@@ -91,7 +90,6 @@ class DocumentProxy extends BaseProxy {
         'Content-Type': 'multipart/form-data'
       }
     })
-    return result
   }
 
   updateDocument (payload = {}) {

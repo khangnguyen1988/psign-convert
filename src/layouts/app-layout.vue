@@ -5,23 +5,23 @@
       <div class="right-main-content" >
         <div @click="toggleNavbar" :class="{'isCollapsed': navbar.isCollapsed}" class="expand-collapse-sidebar">
           <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g filter="url(#filter0_d_192_3268)">
-            <circle cx="33" cy="28" r="17" fill="white"/>
-          </g>
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M35.4115 22L29 28.2222L35.4115 34.4444L37 32.9028L32.1771 28.2222L37 23.5417L35.4115 22Z" fill="#003A8C"/>
-          <defs>
-            <filter id="filter0_d_192_3268" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-              <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-              <feOffset dx="-4" dy="1"/>
-              <feGaussianBlur stdDeviation="6"/>
-              <feComposite in2="hardAlpha" operator="out"/>
-              <feColorMatrix type="matrix" values="0 0 0 0 0.4 0 0 0 0 0.537255 0 0 0 0 0.729412 0 0 0 0.7 0"/>
-              <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_192_3268"/>
-              <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_192_3268" result="shape"/>
-            </filter>
-          </defs>
-        </svg>
+            <g filter="url(#filter0_d_192_3268)">
+              <circle cx="33" cy="28" r="17" fill="white"/>
+            </g>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M35.4115 22L29 28.2222L35.4115 34.4444L37 32.9028L32.1771 28.2222L37 23.5417L35.4115 22Z" fill="#003A8C"/>
+            <defs>
+              <filter id="filter0_d_192_3268" x="0" y="0" width="58" height="58" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                <feOffset dx="-4" dy="1"/>
+                <feGaussianBlur stdDeviation="6"/>
+                <feComposite in2="hardAlpha" operator="out"/>
+                <feColorMatrix type="matrix" values="0 0 0 0 0.4 0 0 0 0 0.537255 0 0 0 0 0.729412 0 0 0 0.7 0"/>
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_192_3268"/>
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_192_3268" result="shape"/>
+              </filter>
+            </defs>
+          </svg>
         </div>
         <app-header />
         <div class="main-content">
@@ -48,6 +48,7 @@
     <tag-modal></tag-modal>
     <group-list-modal></group-list-modal>
     <group-modal></group-modal>
+    <user-subscription-modal></user-subscription-modal>
 
     <app-dialog></app-dialog>
     <div v-show="appLoaded" class="overlay">
@@ -86,6 +87,7 @@ import DigitalCertificateModal from '@/portal-components/signature/digital-certi
 import TagModal from '@/portal-components/tag/tag-modal'
 import GroupListModal from '@/portal-components/group/group-list'
 import GroupModal from '@/portal-components/group/group-modal'
+import UserSubscriptionModal from '@/portal-components/user/user-subscription-modal'
 
 export default {
   name: 'AppLayout',
@@ -100,6 +102,9 @@ export default {
   },
   mounted () {
     document.querySelector('body').focus()
+    this.$bus.on('show-license', () => {
+      this.$modal.show('user-subscription-modal', { model: {} })
+    })
   },
   computed: {
     ...mapState([
@@ -129,20 +134,21 @@ export default {
     DigitalCertificateModal,
     TagModal,
     GroupListModal,
-    GroupModal
+    GroupModal,
+    UserSubscriptionModal
   }
 }
 </script>
 <style scoped lang="scss">
- #main-container {
-   display: flex;
- }
- .main-content {
-   padding: 0 1rem 0 1.5rem;
-   height: 92vh;
-   overflow-y: scroll;
-   @media screen and (max-width: 576px) {
-     padding: 1rem .5rem;
-   }
- }
+#main-container {
+  display: flex;
+}
+.main-content {
+  padding: 0 1rem 0 1.5rem;
+  height: 92vh;
+  overflow-y: scroll;
+  @media screen and (max-width: 576px) {
+    padding: 1rem .5rem;
+  }
+}
 </style>

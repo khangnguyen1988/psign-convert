@@ -12,7 +12,6 @@ export const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.meta.auth && !store.state.auth.authenticated && to.path !== '/login') {
     localStorage.setItem('originalRoute', JSON.stringify(to))
-    console.log(to)
     document.location.href = '/#/login'
     window.location.reload()
   } else {

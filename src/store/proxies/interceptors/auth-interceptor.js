@@ -28,6 +28,9 @@ Vue.$http.interceptors.response.use(
           store.dispatch('auth/logout')
         }
         break
+      case 402:
+        Vue.bus.emit('show-license')
+        break
       case 422:
         ToastUtils.showToast('warning', message)
         break

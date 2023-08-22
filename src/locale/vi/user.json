@@ -84,5 +84,12 @@
   "signatureDigitalType":"Ký điện tử",
   "signatureImageType":"Ký hiện ảnh",
   "signatureAppConfirmationType":"Ký nháy",
-  "viewType":"Xem văn bản"
+  "viewType":"Xem văn bản",
+  "subscription": {
+    "title": "Thông tin bản quyền",
+    "generalInfo": "Thông tin chung",
+    "enrollment": "Các gói đã mua",
+    "total": "Số văn bản đã mua",
+    "totalUsed": "Số văn bản đã tạo"
+  }
 }

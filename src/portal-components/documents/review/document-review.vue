@@ -164,7 +164,7 @@ export default {
         file_id: vm.currentFileId
       }).then(() => {
         resolve({
-          // eslint-disable-next-line no-undef
+          /* eslint-disable no-undef */
           code: AdobeDC.View.Enum.ApiResponseCode.SUCCESS,
           data: {
             metaData: Object.assign(metaData, {})

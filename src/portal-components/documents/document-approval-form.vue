@@ -28,7 +28,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-12">
+              <div v-if="!isConfirmationSign()" class="col-12">
                 <a v-if="defaultImageSignatureModel" @click="onClickDefaultImageSignature()" :class="{'btn-primary' : useDefaultImageSignature, 'btn-outline-secondary': !useDefaultImageSignature   }" class="btn btn-sm">
                   {{$t('signature.defaultSignature')}}
                   <i class="fal fa-pen-nib"></i>
@@ -42,17 +42,17 @@
                   </span>
                   <i class="fal fa-pen"></i>
                 </a>
-<!--                <div v-if="signWithImage && imageSignatureUrl" class="form-group">
-                  <div style="display: flex; justify-content: space-between; width: 150px">
-                    <label>Chữ ký</label>
-                    <a class="pl-4" @click="openModal('signature-modal')"  href="javascript:"><i class="fal fa-pen"></i></a>
-                  </div>
+                <!--                <div v-if="signWithImage && imageSignatureUrl" class="form-group">
+                                  <div style="display: flex; justify-content: space-between; width: 150px">
+                                    <label>Chữ ký</label>
+                                    <a class="pl-4" @click="openModal('signature-modal')"  href="javascript:"><i class="fal fa-pen"></i></a>
+                                  </div>
 
-                  <img style="display:block; border-radius: 5px; border: 1px solid #ccc" width="150px" height="150px"  :src="imageSignatureUrl"  alt="Signature Image"/>
-                </div>
-                <div v-if="signWithImage && !(imageSignatureUrl)">
-                  <a @click="openModal('signature-modal')"  href="javascript:" >Bạn chưa cấu hình chữ ký ảnh. Bấm vào đây để tạo và ký</a>
-                </div>-->
+                                  <img style="display:block; border-radius: 5px; border: 1px solid #ccc" width="150px" height="150px"  :src="imageSignatureUrl"  alt="Signature Image"/>
+                                </div>
+                                <div v-if="signWithImage && !(imageSignatureUrl)">
+                                  <a @click="openModal('signature-modal')"  href="javascript:" >Bạn chưa cấu hình chữ ký ảnh. Bấm vào đây để tạo và ký</a>
+                                </div>-->
               </div>
             </div>
           </div>
@@ -210,7 +210,9 @@ export default {
           })
         })
       } else {
-        this.setLoading(false)
+        this.loadPdf(this.currentDisplayFile).then(() => {
+          this.setLoading(false)
+        })
       }
     })
   },
@@ -827,25 +829,25 @@ export default {
 </script>
 
 <style scoped>
- .selected-files {
+.selected-files {
   padding: 0;
   margin: 0;
- }
- .selected-files li {
-   cursor: pointer;
+}
+.selected-files li {
+  cursor: pointer;
   list-style: none;
   padding: .5rem;
   border: 1px solid #ccc;
   margin: 1rem 0;
   border-radius: 3px;
- }
- .selected-files li.active, .selected-files li:hover  {
-   background: #DAECF9;
-   border: 1px solid #DAECF9;
- }
- .selected-files li.active  {
-   font-weight: bold;
-   color: #225b87;
- }
+}
+.selected-files li.active, .selected-files li:hover  {
+  background: #DAECF9;
+  border: 1px solid #DAECF9;
+}
+.selected-files li.active  {
+  font-weight: bold;
+  color: #225b87;
+}
 
 </style>

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-const clientKey = process.env.VUE_APP_ADOBE_CLIENT_KEY
+const clientKey = process.env.ADOBE_CLIENT_KEY
 
 export default {
   name: 'AdobePdfViewer',
@@ -59,7 +59,7 @@ export default {
             })
           }
           adobeDCView.registerCallback(
-            // eslint-disable-next-line no-undef
+            /* eslint-disable no-undef */
             AdobeDC.View.Enum.CallbackType.SAVE_API,
             (metaData, content, options) =>
               /* Add your custom save implementation here...and based on that resolve or reject response in given format */
@@ -67,17 +67,17 @@ export default {
                 previewFilePromise.then(adobeViewer => {
                   adobeViewer.getAnnotationManager().then(annotationManager => {
                     annotationManager.getAnnotations({})
-                      .then(comments => {
+                      .then(_comments => {
                         vm.$emit('save', {
                           resolve,
                           reject,
-                          comments,
+                          comments: _comments,
                           metaData,
                           content,
                           options
                         })
                       })
-                      .catch(error => console.log(error))
+                      .catch(error => console.info(error))
                   })
                 })
               }), {

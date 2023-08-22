@@ -71,5 +71,12 @@
   "signatureDigitalType":"Signature Digital Type",
   "signatureImageType":"Signature Image Type",
   "signatureAppConfirmationType":"Signature App Confirmation Type",
-  "viewType":"View"
+  "viewType":"View",
+  "subscription": {
+    "title": "Subscription",
+    "generalInfo": "General Info",
+    "enrollment": "Enrollment",
+    "total": "Capacity",
+    "totalUsed": "Used"
+  }
 }

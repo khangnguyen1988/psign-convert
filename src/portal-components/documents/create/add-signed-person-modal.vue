@@ -84,11 +84,10 @@ export default {
   methods: {
     onSubmit (formModel) {
       this.$refs.form.validate().then((isValid) => {
-        if (isValid) {
+        if (isValid && formModel.user) {
           this.$modal.hide('add-signed-person-modal', { isOk: true })
-          const signedPerson = this.signedPersons.filter(p => p.id === formModel.user)
           this.$bus.emit('add-signed-person', [{
-            user: signedPerson[0],
+            user: formModel.user,
             signedType: formModel.signedType
           }])
         }

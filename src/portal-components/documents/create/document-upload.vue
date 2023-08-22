@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template slot="top-buttons" slot-scope="props">
+    <template v-slot:top-buttons="props">
       <button
         v-if="mode === 'ASSIGN_SIGNED_PERSONS'"
         type="button"
@@ -200,7 +200,7 @@ import AppLoading from '@/components/app-loading/index'
 import PersonIcon from '@/portal-components/icons/person-icon'
 import ToastUtils from '@/utils/toast'
 import { getFile, getFilesInfo } from '@/utils/document'
-import VendorType from '@/portal-components/documents/create/document-signed-vendor-type.vue'
+import VendorType from '@/portal-components/documents/create/document-signed-vendor-type'
 
 const formSchema = context => ({
   name: {
@@ -328,7 +328,6 @@ const formSchema = context => ({
             p => signaturePosition.findIndex(d => d.userId === p.user.id) > -1
           )
       ) {
-        console.log('1')
         result = { msg: context.$t('document.signedPositionIsMissing') }
         ToastUtils.showToast('error', result.msg)
       }
@@ -626,22 +625,25 @@ export default {
       this.$refs.form.setFieldValue('signedPerson', signPersonIds)
     },
     removeSignedPerson () {
-      this.signedPersons = this.signedPersons.filter(p => this.$refs.pdfInstance.removeUserSignatures(p.user.id))
+      this.signedPersons.forEach(p => {
+        this.$refs.pdfInstance.removeUserSignatures(p.user.id)
+      })
       this.signedPersons = []
       this.$refs.form.setFieldValue('signedPosition', new Set([]))
       this.$refs.form.setFieldValue('signedPerson', new Set([]))
     },
     onAddSignedPerson (signedPersons) {
+      const vm = this
       signedPersons.forEach((newAddedSignedPerson, index) => {
         if (
-          this.signedPersons.length === 0 ||
-          this.signedPersons.findIndex(
+          vm.signedPersons.length === 0 ||
+          vm.signedPersons.findIndex(
             p => p.user.id === newAddedSignedPerson.user.id
           ) === -1
         ) {
-          this.signedPersons = [...this.signedPersons, newAddedSignedPerson]
+          vm.signedPersons = [...vm.signedPersons, newAddedSignedPerson]
 
-          if (this.$refs.pdfInstance && this.$refs.pdfInstance.currentFrameEl) {
+          if (vm.$refs.pdfInstance && vm.$refs.pdfInstance.currentFrameEl) {
             const width = this.$refs.pdfInstance.currentFrameEl.width()
             const height = this.$refs.pdfInstance.currentFrameEl.height()
             this.onClickAddSignatureToDocument(newAddedSignedPerson, {
@@ -651,13 +653,13 @@ export default {
             })
           }
 
-          let signPersonIds = this.$refs.form.getFieldValue('signedPerson')
+          let signPersonIds = vm.$refs.form.getFieldValue('signedPerson')
           if (!signPersonIds) {
             signPersonIds = new Set([newAddedSignedPerson.user.id])
           } else {
             signPersonIds.add(newAddedSignedPerson.user.id)
           }
-          this.$refs.form.setFieldValue('signedPerson', signPersonIds)
+          vm.$refs.form.setFieldValue('signedPerson', signPersonIds)
         }
       })
     },
@@ -856,7 +858,6 @@ export default {
           sequence: sequence + 1
         })
       }
-      console.log(vendors)
       return vendors
     },
     convertSignedEmailToPersons (emails, options) {

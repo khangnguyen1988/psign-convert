@@ -1,45 +1,46 @@
 <template>
-    <header class="app-header">
-      <span class="title">{{companyName}}</span>
-      <a id="btn-notification" class="app-functions no-background" title="Notification" href="javascript:">
-        <i class="far fa-bell">
-          <span v-if="unreadNotification > 0" class="badge badge-light">{{unreadNotification}}</span>
-        </i>
-      </a>
-      <b-popover
-        custom-class="notification-container-popover"
-        target="btn-notification"
-        placement="bottom"
-        triggers="click focus"
-      >
-        <div class="notification-container">
-          <div class="notification-item" :class="{'unread': !notification.read}"  v-for="(notification, index) in notifications" @click="onClickNotificationItem(notification)">
-            <div class="d-flex">
-              <div class="content">
-                <h5 class="title">{{notification.title === 'NOTIFICATION_CONFIRM_PAID' ? $t('invoice.invoicePayout'): $t('invoice.invoiceSharing')}}</h5>
-                <p class="desc">{{notification.title}}</p>
-              </div>
-              <div class="actions">
-                <i v-if="notification.read" @click="markAsNotificationItem($event, {notification_id: notification.id, value: false})" class="fal fa-check-circle"></i>
-              </div>
+  <header class="app-header">
+    <span class="title">{{companyName}}</span>
+    <a id="btn-notification" class="app-functions no-background" title="Notification" href="javascript:">
+      <i class="far fa-bell">
+        <span v-if="unreadNotification > 0" class="badge badge-light">{{unreadNotification}}</span>
+      </i>
+    </a>
+    <b-popover
+      custom-class="notification-container-popover"
+      target="btn-notification"
+      placement="bottom"
+      triggers="click focus"
+    >
+      <div class="notification-container">
+        <div class="notification-item" :class="{'unread': !notification.read}"  v-for="(notification) in notifications" @click="onClickNotificationItem(notification)">
+          <div class="d-flex">
+            <div class="content">
+              <h5 class="title">{{notification.title === 'NOTIFICATION_CONFIRM_PAID' ? $t('invoice.invoicePayout'): $t('invoice.invoiceSharing')}}</h5>
+              <p class="desc">{{notification.title}}</p>
+            </div>
+            <div class="actions">
+              <i v-if="notification.read" @click="markAsNotificationItem($event, {notification_id: notification.id, value: false})" class="fal fa-check-circle"></i>
             </div>
           </div>
         </div>
-      </b-popover>
+      </div>
+    </b-popover>
 
-      <b-dropdown size="sm" offset="-170"  variant="link" toggle-class="text-decoration-none" no-caret>
-        <template #button-content>
-          <a class="app-functions" href="javascript:"><i class="fas fa-user"></i></a>
-        </template>
-        <b-dropdown-item href="#" @click="openModal('user-profile-modal')"><i class="far fa-user-circle"></i> {{$t('user.userProfile')}}</b-dropdown-item>
-        <b-dropdown-item href="#" @click="openModal('user-list-modal')"><i class="fal fa-user-cog"></i>  {{$t('user.userManagement')}}</b-dropdown-item>
-        <b-dropdown-item href="#" @click="openModal('group-list-modal')"><i class="fal fa-users"></i>  {{$t('group.group')}}</b-dropdown-item>
-        <!-- <b-dropdown-item href="#" @click="openModal('digital-certificate-modal')"><i class="fal fa-file-certificate"></i>Chứng thư số</b-dropdown-item> -->
-        <b-dropdown-item href="#" @click="onChangeLanguage()"><i class="fal fa-language"></i>{{langText}}</b-dropdown-item>
-        <b-dropdown-divider></b-dropdown-divider>
-        <b-dropdown-item href="#" @click="logout()"><i class="fal fa-sign-out-alt"></i>{{$t('app.logout')}}</b-dropdown-item>
-      </b-dropdown>
-    </header>
+    <b-dropdown size="sm" offset="-170"  variant="link" toggle-class="text-decoration-none" no-caret>
+      <template #button-content>
+        <a class="app-functions" href="javascript:"><i class="fas fa-user"></i></a>
+      </template>
+      <b-dropdown-item href="#" @click="openModal('user-profile-modal')"><i class="far fa-user-circle"></i> {{$t('user.userProfile')}}</b-dropdown-item>
+      <b-dropdown-item href="#" @click="openModal('user-list-modal')"><i class="fal fa-user-cog"></i>  {{$t('user.userManagement')}}</b-dropdown-item>
+      <b-dropdown-item href="#" @click="openModal('group-list-modal')"><i class="fal fa-users"></i>  {{$t('group.group')}}</b-dropdown-item>
+      <b-dropdown-item href="#" @click="openModal('user-subscription-modal')"><i class="fal fa-copyright"></i>  {{$t('user.subscription.title')}}</b-dropdown-item>
+      <!-- <b-dropdown-item href="#" @click="openModal('digital-certificate-modal')"><i class="fal fa-file-certificate"></i>Chứng thư số</b-dropdown-item> -->
+      <b-dropdown-item href="#" @click="onChangeLanguage()"><i class="fal fa-language"></i>{{langText}}</b-dropdown-item>
+      <b-dropdown-divider></b-dropdown-divider>
+      <b-dropdown-item href="#" @click="logout()"><i class="fal fa-sign-out-alt"></i>{{$t('app.logout')}}</b-dropdown-item>
+    </b-dropdown>
+  </header>
 </template>
 
 <script>
@@ -166,8 +167,8 @@ export default {
 </script>
 
 <style>
-  .app-header .dropdown-menu .dropdown-item {
-    display: flex;
-    align-items: center;
-  }
+.app-header .dropdown-menu .dropdown-item {
+  display: flex;
+  align-items: center;
+}
 </style>
