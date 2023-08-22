@@ -3,7 +3,7 @@
 </template>
 
 <script>
-const clientKey = process.env.ADOBE_CLIENT_KEY
+const clientKey = process.env.VUE_APP_ADOBE_CLIENT_KEY
 
 export default {
   name: 'AdobePdfViewer',

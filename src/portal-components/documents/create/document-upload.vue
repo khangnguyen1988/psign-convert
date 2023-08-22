@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-slot:top-buttons="props">
+    <template slot="top-buttons" slot-scope="props">
       <button
         v-if="mode === 'ASSIGN_SIGNED_PERSONS'"
         type="button"

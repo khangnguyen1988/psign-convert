@@ -7,9 +7,9 @@
   >
     <template v-slot:buttons="slotProps">
       <div class="buttons">
-        <button @click="onClickSend(slotProps.rowItem)"  class="btn btn-sm btn-primary">{{$t('document.sentToSign')}}</button>
-        <button @click="onClickReview(slotProps.rowItem)"  class="btn btn-sm btn-secondary">{{$t('document.review')}}</button>
-        <button @click="onClickEdit(slotProps.rowItem)"  class="btn btn-sm btn-outline-secondary">
+        <button @click="onClickSend(slotProps.rowItem)"  class="btn btn-sm btn-primary mr-1">{{$t('document.sentToSign')}}</button>
+        <button @click="onClickReview(slotProps.rowItem)"  class="btn btn-sm btn-secondary mr-1">{{$t('document.review')}}</button>
+        <button @click="onClickEdit(slotProps.rowItem)"  class="btn btn-sm btn-outline-secondary mr-1">
           {{$t('document.edit')}}
         </button>
         <button @click="onClickDelete(slotProps.rowItem)" class="btn btn-sm btn-outline-danger">{{$t('document.delete')}}</button>
