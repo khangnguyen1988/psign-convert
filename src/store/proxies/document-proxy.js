@@ -36,7 +36,7 @@ class DocumentProxy extends BaseProxy {
     return this.submit('post', `${this.endpoint}/create`, formData, {
       toast,
       showLoading: true,
-      onUploadProgress(progressEvent) {
+      onUploadProgress (progressEvent) {
         uploadStatus.percentCompleted = Math.round(
           (progressEvent.loaded * 100) / progressEvent.total
         )
@@ -81,7 +81,7 @@ class DocumentProxy extends BaseProxy {
     return this.submit('post', `${this.endpoint}/upload_file_in_draft`, formData, {
       toast,
       showLoading: true,
-      onUploadProgress(progressEvent) {
+      onUploadProgress (progressEvent) {
         uploadStatus.percentCompleted = Math.round(
           (progressEvent.loaded * 100) / progressEvent.total
         )

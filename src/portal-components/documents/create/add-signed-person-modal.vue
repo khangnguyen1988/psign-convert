@@ -87,7 +87,10 @@ export default {
         if (isValid && formModel.user) {
           this.$modal.hide('add-signed-person-modal', { isOk: true })
           this.$bus.emit('add-signed-person', [{
-            user: formModel.user,
+            user: {
+              id: formModel.user.user.id,
+              name: formModel.user.name
+            },
             signedType: formModel.signedType
           }])
         }

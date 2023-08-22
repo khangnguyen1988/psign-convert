@@ -78,7 +78,8 @@
       "vue/no-unused-vars": 0,
       "vue/require-v-for-key": 0,
       "vue/no-unused-components": 0,
-      "vue/require-valid-default-prop": 0
+      "vue/require-valid-default-prop": 0,
+      "no-debugger": 0
     }
   },
   "browserslist": [
