@@ -18,10 +18,10 @@
           {{ $t('app.processing') }} ({{ uploadStatus.count }})
         </strong>
       </button>
-      <button type="button" class="btn btn-sm btn-outline-primary"  @click="onClickAddNewComment()">
+      <button type="button" class="btn btn-sm btn-outline-primary mr-1"  @click="onClickAddNewComment()">
         <i class="fal fa-comment"></i> Thêm nhận xét
       </button>
-      <button type="button" class="btn btn-sm btn-outline-secondary"  @click="onClickAddCheckListItem()">
+      <button type="button" class="btn btn-sm btn-outline-secondary mr-1"  @click="onClickAddCheckListItem()">
         <i class="fal fa-tasks-alt"></i> Thêm đầu việc
       </button>
       <button type="button" class="btn btn-sm btn-outline-secondary"  @click="onClickExternalLink()">

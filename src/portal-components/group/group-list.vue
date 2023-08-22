@@ -24,7 +24,7 @@
               {{props.rowData.user_id.length}}
             </template>
             <template v-slot:action="props">
-              <button class="btn btn-outline-primary btn-sm pb-0 pt-0"
+              <button class="btn btn-outline-primary btn-sm pb-0 pt-0 mr-1"
                       :title="'Edit'"
                       @click="onClickEdit(props.rowData)">
                 <i class="fal fa-pen" aria-hidden="true"></i>

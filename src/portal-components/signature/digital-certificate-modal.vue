@@ -21,12 +21,12 @@
             :fields="fields"
           >
             <div slot="action" slot-scope="props">
-              <button v-if="!props.rowData.is_active" class="btn btn-outline-success btn-sm pb-0 pt-0"
+              <button v-if="!props.rowData.is_active" class="btn btn-outline-success btn-sm pb-0 pt-0 mr-1"
                       :title="'Active'"
                       @click="onClickActive(props.rowData)">
                 {{$t('signature.active')}}
               </button>
-              <button v-if="!props.rowData.is_active" class="btn btn-danger btn-sm pb-0 pt-0"
+              <button v-if="!props.rowData.is_active" class="btn btn-danger btn-sm pb-0 pt-0 mr-1"
                       :title="'Delete'"
                       @click="onClickDelete(props.rowData)">
                 <i class="fal fa-fw fa-trash" aria-hidden="true"></i>
