@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     onSignDocumentSuccess () {
-      this.$router.push({ name: 'external-view', params: { uuid_url: this.uuid_url } })
+      this.$router.push({ name: 'external-view', params: { uuid_url: this.uuid_url } }).catch(() => {})
     },
     onClickSign () {
       this.$refs.form.submit()

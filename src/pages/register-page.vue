@@ -144,7 +144,7 @@ export default {
             setTimeout(() => {
               this.$router.push({
                 name: 'login'
-              })
+              }).catch(() => {})
             }, 3000)
           }).catch((e) => {
             this.serverErrors = e.detail

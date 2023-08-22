@@ -119,7 +119,7 @@ export default {
       this.$modal.show('document-review-modal', { model })
     },
     onClickTab (tabName) {
-      this.$router.push({ name: 'incoming-documents', params: { tab: tabName } })
+      this.$router.push({ name: 'incoming-documents', params: { tab: tabName } }).catch(() => {})
     }
   },
   watch: {

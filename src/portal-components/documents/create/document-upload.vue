@@ -799,7 +799,7 @@ export default {
     onUploadResponse (response) {
       this.$modal.hide('document-upload-modal', { isOk: true })
       this.$bus.emit('document-upload-success', response)
-      this.$router.push({ name: 'draft-documents' })
+      this.$router.push({ name: 'draft-documents' }).catch(() => {})
     },
     uploadDocument (formModel) {
       const payload = this.preparePayloadForPostingToServer(formModel, true)

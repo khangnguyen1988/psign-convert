@@ -58,13 +58,13 @@ export default {
   },
   methods: {
     onDocumentUploadSuccess () {
-      this.$router.push({ name: 'draft-documents' })
+      this.$router.push({ name: 'draft-documents' }).catch(() => {})
     },
     onClickSubmit () {
       this.$refs.documentUpload.submit()
     },
     onClickCancel () {
-      this.$router.push({ name: 'draft-documents' })
+      this.$router.push({ name: 'draft-documents' }).catch(() => {})
     },
     beforeDestroy () {
       this.$bus.off('document-upload-success', this.onDocumentUploadSuccess)

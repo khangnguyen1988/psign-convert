@@ -64,7 +64,7 @@ export default {
     },
     onSignDocumentSuccess (documentId) {
       this.countDocument()
-      this.$router.push({ name: 'view-document', params: { id: documentId } })
+      this.$router.push({ name: 'view-document', params: { id: documentId } }).catch(() => {})
     },
     beforeOpen (params) {
       this.documentModel = params.model
